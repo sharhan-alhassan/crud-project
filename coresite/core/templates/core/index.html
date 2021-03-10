@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for core in index %}
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img src="https://images.unsplash.com/photo-1613480188110-e22ae41347e2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixlib=rb-1.2.1&q=80&w=200" alt="card image cap" class="card-img-top">
+                        <div class="card-body">
+                            <h4><a href="{{ core.get_absolute_url }}">{{ core.title }}</a></h4>
+                            <p class="card-text"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="">
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
