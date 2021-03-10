@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 pt-5">
+            <img src="https://source.unsplash.com/random/1600x900" alt="" class="card-img-top">
+            <h2 class="pt-5">{{ post.title}}</h2>
+            <p>{{ post.excerpt }}</p>
+        </div>
+    </div>
+</div>
+{% endblock%}
