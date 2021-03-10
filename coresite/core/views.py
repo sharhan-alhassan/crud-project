@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .models import Core
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -27,3 +27,17 @@ class AddView(CreateView):
     template_name = 'core/add.html'
     fields = '__all__' #take all the fields from the db and put that into a form
     success_url = reverse_lazy('core:posts')
+
+class EditView(UpdateView):
+    model = Core
+    template_name = 'core/edit.html'
+    fields = '__all__'
+    pk_url_kwarg = 'pk'
+    success_url = reverse_lazy('core:posts')
+
+class DeleteView(DeleteView):
+    model = Core 
+    template_name = 'core/confirm-delete.html'
+    pk_url_kwarg = 'pk'
+    success_url = reverse_lazy('core:posts')
+    
