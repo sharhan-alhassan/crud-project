@@ -5,3 +5,4 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Core
         fields = '__all__'
+        # or: exclude = ['slug']
